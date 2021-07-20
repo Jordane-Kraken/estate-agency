@@ -21,3 +21,16 @@ body {
     height: 250px;
   }
 }
+
+.carouselMain {
+  height: 530px;
+}
+
+.carouselItem {
+  transform: translate(0%, -40%);
+  object-fit: contain;
+}
+
+.globalBtn {
+  background-color: rgba(0, 150, 136, 0.7);
+}
