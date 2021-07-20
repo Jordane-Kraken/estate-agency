@@ -5,3 +5,19 @@ body {
   margin: 0;
   font-family: 'Quicksand', sans-serif !important;
 }
+
+.globalColor{
+  color: rgba(0, 150, 136, 0.7);
+}
+
+.globalImg{
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px){
+  .globalImg {
+    width: 100%;
+    height: 250px;
+  }
+}

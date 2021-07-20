@@ -1,12 +1,29 @@
 import React from "react";
+import Head from 'next/head';
+import '../styles/Home.module.css'
 import { Layout } from "../components/layout";
+import api from "../auth/axios";
+import {PropertyVip} from "../components/propertyVip";
+import {MDBContainer} from "mdbreact";
 
-const Home = () => {
+export default function Home({propertiesVip}) {
   return (
     <Layout>
-      <div>Home</div>
+    <MDBContainer>
+      <PropertyVip properties={propertiesVip} />
+    </MDBContainer>
+      
     </Layout>
   )
 }
 
-export default Home;
+
+export const getStaticProps = async() => {
+  const {data : propertiesVip} = await api.get('/api/properties/vip');
+
+  return {
+    props: {
+      propertiesVip
+    }
+  }
+}
