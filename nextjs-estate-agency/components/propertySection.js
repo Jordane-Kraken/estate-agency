@@ -12,6 +12,7 @@ MDBBtn
 }
 from 'mdbreact';
 import { priceFormatted } from './helpers';
+import Link from 'next/link';
 
 export const PropertySection = ({properties}) => (
   <>
@@ -34,7 +35,9 @@ export const PropertySection = ({properties}) => (
     }
   </MDBRow>
   <div className="text-center">
-    <MDBBtn className="globalBtn">Afficher plus</MDBBtn>
+    <MDBBtn className="globalBtn">
+    <Link href="/proprietes"><a className="nav-link">Afficher plus</a></Link>
+    </MDBBtn>
   </div>
   <hr className="my-5" />
   </>
