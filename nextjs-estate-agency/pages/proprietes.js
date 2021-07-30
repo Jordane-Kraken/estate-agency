@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout } from '../components/layout';
+import {SearchFilter} from '../components/searchFilter';
 import { Card } from '../components/card';
 import api from '../auth/axios';
 import {MDBContainer, MDBIcon} from "mdbreact";
@@ -22,6 +23,7 @@ const Proprietes = ({properties, currentPage, pageCount}) => {
   return(
     <Layout>
     <MDBContainer className="mt-2">
+    <SearchFilter />
      <Card properties={properties}/> 
      <div className="paginateCenter">
        <ReactPaginate
