@@ -3,7 +3,10 @@ import Collapse from './collapse';
 import {priceFormatted} from './helpers';
 import Moment from 'react-moment';
 
-export const Slug = ({property}) => (
+export const Slug = ({property}) => {
+  const dateToFormat = new Date(property.createdAt);
+
+  return(
   <div className="mt-4">
   <h1 className="globalColor">{property.title}</h1>
   <hr className="my-3"/>
@@ -40,7 +43,7 @@ export const Slug = ({property}) => (
   </div>
   <div>
     <span className="font-weight-bolder">Date de création de l'annonce</span> : 
-    <Moment format="DD/MM/YYY"> {property.createdAt}</Moment>
+    <Moment date={dateToFormat} format=" DD/MM/YYYY" />
   </div>
   </section>
   </Collapse>
@@ -55,3 +58,4 @@ export const Slug = ({property}) => (
   </style>
   </div>
 )
+}
