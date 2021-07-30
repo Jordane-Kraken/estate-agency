@@ -6,12 +6,19 @@ import {
   MDBCardBody,
   MDBContainer,
   MDBCol,
-  MDBRow
+  MDBRow,
+  MDBIcon
 } from 'mdbreact';
 import {CardCarousel} from '../../components/cardCarousel';
 import {Slug} from '../../components/slug';
+import {CardVip} from '../../components/cardVip';
+import {CardRelated} from '../../components/cardRelated';
 
-const Property = ({property}) => {
+const Property = ({property, properties, propertyRelated}) => {
+  const styles = {
+    fontSize: 15,
+
+  }
   return(
     <>
     { property && (
@@ -24,6 +31,39 @@ const Property = ({property}) => {
             <CardCarousel property={property} />
             <Slug property={property} />
             </MDBCol>
+            <MDBCol md="3" lg="3" >
+            <h4 className="mt-5">Contactez-nous</h4>
+            <div styles={styles}>
+              <MDBIcon icon="map-marked-alt" className="mr-1" />
+              10 rue des vainqueurs<br />
+              75013 PARIS
+            </div>
+            <div styles={styles}>
+              <MDBIcon icon="phone-alt" className="mr-1" />
+              +243 25-255-789
+            </div>
+            <div styles={styles}>
+              <MDBIcon icon="mobile-alt" className="mr-1" />
+              +243 25-621-452
+            </div>
+            <div styles={styles}>
+              <MDBIcon icon="envelope" className="mr-1" />
+              agence-immob@gmail.com
+            </div>
+            <h3 className="mt-4 mb-3">Biens sponsorisés</h3>
+            <CardVip properties={properties} />
+            </MDBCol>
+          </MDBRow>
+          <hr className="my-4" />
+          <MDBRow>
+            {
+              propertyRelated && propertyRelated.length !== 0 && (
+              <MDBCol>
+              <h2 className="mb-5">Biens similaires</h2>
+                 <CardRelated properties={propertyRelated} />
+              </MDBCol>
+            )
+            }
           </MDBRow>
           </MDBCardBody>
         </MDBCard>
@@ -46,11 +86,14 @@ export const getStaticPaths = async() => {
 
 export const getStaticProps = async({params}) => {
   const {slug} = params;
-  const {data: property} = await api.get(`/api/property/${slug}`)
-
+  const {data: property} = await api.get(`/api/property/${slug}`);
+  const {data: properties} = await api.get('/api/properties/vip');
+  const {data: propertyRelated} = await api.get(`/api/properties/related/${property._id}`)
   return{
     props: {
-      property
+      property,
+      properties,
+      propertyRelated
     }
   }
 }
