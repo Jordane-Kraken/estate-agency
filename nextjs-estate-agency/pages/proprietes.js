@@ -1,11 +1,10 @@
 import React from 'react';
-import { Layout } from '../components/layout';
+import { Layout } from '../components/layout/layout';
 import {SearchFilter} from '../components/searchFilter';
 import { Card } from '../components/card';
 import api from '../auth/axios';
 import {MDBContainer, MDBIcon} from "mdbreact";
 import {useRouter} from 'next/router';
-import reactPaginate from 'react-paginate';
 import ReactPaginate from 'react-paginate';
 
 const Proprietes = ({properties, currentPage, pageCount}) => {

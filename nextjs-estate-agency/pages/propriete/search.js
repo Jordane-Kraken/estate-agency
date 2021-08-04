@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 import { useRouter } from "next/router";
 import api from "../../auth/axios";
 import { Card } from "../../components/card";
@@ -20,7 +20,7 @@ const Search = () => {
       setProperties(data);
     }
     getProperty();
-  }, [router.query.title, router.query.category, properties]);
+  }, [router.query.title, router.query.category]);
 
   return (
     <Layout>

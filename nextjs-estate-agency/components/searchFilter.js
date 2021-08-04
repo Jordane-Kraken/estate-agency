@@ -64,7 +64,7 @@ export const SearchFilter = () => {
           </span>
           <input name="title"
           onChange={handleChange("title")}
-          placeholder="recherche"
+          placeholder="Recherche"
           value={values.title}
           className="form-control form-field"
           />

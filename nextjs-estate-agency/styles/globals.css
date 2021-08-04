@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Quicksand', sans-serif !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
 }
 
 .globalColor{
@@ -27,8 +27,8 @@ body {
   }
 }
 
-.carouselMain {
-  height: 530px;
+img {
+  cursor: pointer;
 }
 
 .carouselItem {
@@ -41,11 +41,14 @@ body {
 }
 
 .nav-link {
-  color: #000;
+  color: rgba(28, 36, 35, 0.7) !important;
+}
+
+.nav {
+  color: rgba(28, 36, 35, 0.7) !important;
 }
 
 .nav-link:hover {
-  color: #FCC6C2;
   font-weight: bold;
 }
 
@@ -55,7 +58,6 @@ body {
   border-radius: 50%;
   pointer-events: none;
   color: white;
-  border: 3px solid #FCC6C2;
 }
 
 .custom-paginate {
@@ -79,5 +81,4 @@ body {
 .paginate:hover {
   background-color: rgba(0, 150, 136, 0.7);
   border-radius: 50%;
-  border: 3px solid #FCC6C2;
 }

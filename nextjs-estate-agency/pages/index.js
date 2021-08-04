@@ -1,7 +1,7 @@
 import React from "react";
 import Head from 'next/head';
 import '../styles/Home.module.css'
-import { Layout } from "../components/layout";
+import { Layout } from "../components/layout/layout";
 import { Carousel } from "../components/carousel";
 import api from "../auth/axios";
 import {PropertyVip} from "../components/propertyVip";
@@ -12,7 +12,7 @@ import { MDBAnimation } from "mdbreact";
 
 export default function Home({propertiesVip, properties}) {
   return (
-    <Layout>
+    <Layout footer>
     <Carousel />
     <MDBAnimation type="fadeIn">
     <h1 className="text-center">Bienvenue sur AgenceImmob'</h1>

@@ -1,6 +1,6 @@
 import React from "react";
 import api from "../../auth/axios";
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 import {
   MDBCard,
   MDBCardBody,

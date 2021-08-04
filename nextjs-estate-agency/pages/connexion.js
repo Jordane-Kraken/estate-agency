@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
-import { Layout } from "../components/layout";
+import { Layout } from "../components/layout/layout";
 import useAuth from "../auth/context";
 import { useRouter } from "next/router";
 
@@ -48,7 +48,7 @@ const FormPage = () => {
                 />
               </div>
               <div className="text-center">
-                <button type="submit" className="globalButton">Connexion</button>
+                <button type="submit" className="globalBtn">Connexion</button>
               </div>
             </form>
       </MDBContainer>

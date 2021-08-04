@@ -17,26 +17,27 @@ export const Card = ({ properties }) => {
     <>
       {properties &&
         properties.map((property) => (
-          <MDBCard key={property.id}>
+          <MDBCard key={property._id}>
             <MDBCardBody>
               <MDBRow>
                 <MDBCol lg="5">
                   <Link
                     href="/propriete/[slug]"
                     as={`/propriete/${property.slug}`}
-                    passHref
                   >
-                    <MDBView
-                      className="rounded z-depth-2 mb-lg-0 mb-4"
-                      hover
-                      waves
-                    >
-                      <img
-                        className="globalImg"
-                        src={property.pictures[0]}
-                        alt=""
-                      />
-                    </MDBView>
+                    <a>
+                      <MDBView
+                        className="rounded z-depth-2 mb-lg-0 mb-4"
+                        hover
+                        waves
+                      >
+                        <img
+                          className="globalImg"
+                          src={property.pictures[0]}
+                          alt=""
+                        />
+                      </MDBView>
+                    </a>
                   </Link>
                 </MDBCol>
                 <MDBCol lg="7">
