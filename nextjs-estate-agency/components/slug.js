@@ -42,7 +42,7 @@ export const Slug = ({property}) => {
     <span className="font-weight-bolder">Catégorie</span> : {property.category.name}
   </div>
   <div>
-    <span className="font-weight-bolder">Date de création de l'annonce</span> : 
+    <span className="font-weight-bolder">Date de création de l&apos;annonce</span> : 
     <Moment date={dateToFormat} format=" DD/MM/YYYY" />
   </div>
   </section>
