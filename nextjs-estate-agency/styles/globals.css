@@ -48,6 +48,10 @@ img {
   color: rgba(28, 36, 35, 0.7) !important;
 }
 
+.footer {
+  color: rgba(28, 36, 35, 0.7) !important;
+}
+
 .nav-link:hover {
   font-weight: bold;
 }

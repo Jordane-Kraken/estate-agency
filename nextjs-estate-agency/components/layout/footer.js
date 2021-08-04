@@ -7,18 +7,14 @@ export const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
-            <h5 className="title nav-link">Footer Content</h5>
-            <p className="nav-link">
-              Here you can use rows and columns here to organize your footer
-              content.
+            <h5 className="footer">AgenceImmob'</h5>
+            <p className="footer">
+            New York, 94126, United States
             </p>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title nav-link">Links</h5>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
+      <div className="footer-copyright text-center py-3 footer">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()}
         </MDBContainer>

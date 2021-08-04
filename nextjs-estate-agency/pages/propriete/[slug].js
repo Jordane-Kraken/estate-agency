@@ -22,7 +22,7 @@ const Property = ({ property, properties, propertyRelated }) => {
     <>
       {property && (
         <Layout>
-          <MDBContainer>
+          <MDBContainer className="mt-2">
             <MDBCard>
               <MDBCardBody>
                 <MDBRow>
