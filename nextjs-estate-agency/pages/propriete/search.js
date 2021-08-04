@@ -1,19 +1,42 @@
-import React from 'react';
-import {Layout} from "../../components/layout";
-import {useRouter} from 'next/router';
+import React, { useState, useEffect } from "react";
+import { Layout } from "../../components/layout";
+import { useRouter } from "next/router";
+import api from "../../auth/axios";
+import { Card } from "../../components/card";
+import { SearchFilter } from "../../components/searchFilter";
 
 const Search = () => {
   const router = useRouter();
-return(
-  <Layout>
-<div>
-  {router.query.title}
-</div>
-<div>
-{router.query.category}
-</div>
-  </Layout>
-)
-}
+  const [properties, setProperties] = useState("");
+
+  useEffect(() => {
+    async function getProperty() {
+      const { data } = await api.post("/api/property/list/search", {
+        filters: {
+          title: router.query.title,
+          category: router.query.category,
+        },
+      });
+      setProperties(data);
+    }
+    getProperty();
+  }, [router.query.title, router.query.category, properties]);
+
+  return (
+    <Layout>
+      <div className="container">
+        <SearchFilter />
+        {router.query.category || router.query.title ? (
+          <div>
+            <div className="mb-4 text-center globalColor font-weight-bolder">
+              {properties.size} bien(s) trouvé(s)
+            </div>
+            <Card properties={properties.data} />
+          </div>
+        ) : null}
+      </div>
+    </Layout>
+  );
+};
 
 export default Search;

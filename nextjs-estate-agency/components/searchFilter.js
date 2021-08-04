@@ -60,7 +60,7 @@ export const SearchFilter = () => {
         <div className="input-group-sm mb-3 ">
           <div className="input-group-prepend">
           <span className="input-group-text customColor">
-          <MDBIcon icon="list-ul" onClick={onSubmit}/>
+          <MDBIcon icon="list-ul" />
           </span>
           <input name="title"
           onChange={handleChange("title")}
@@ -69,7 +69,7 @@ export const SearchFilter = () => {
           className="form-control form-field"
           />
           <span className="input-group-text customColor">
-          <MDBIcon icon="search" />
+          <MDBIcon icon="search" onClick={onSubmit}/>
           </span>
           </div>
         </div>
