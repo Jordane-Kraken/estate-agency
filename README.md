@@ -1,4 +1,4 @@
-# Website for estate agency made with Next JS
+# 🏡 Website for estate agency made with Next JS
 
 run yarn install 
 and yarn dev to launch the server 
