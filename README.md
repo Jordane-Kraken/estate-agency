@@ -1,9 +1,9 @@
 # Website for estate agency made with Next JS
 
-## run yarn install 
-## and yarn dev to launch the server 
+run yarn install 
+and yarn dev to launch the server 
 
-## technologies
+## Technologies
 
 - Next JS
 - Axios
